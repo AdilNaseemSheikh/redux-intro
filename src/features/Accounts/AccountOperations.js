@@ -9,9 +9,11 @@ function AccountOperations() {
   const [loanPurpose, setLoanPurpose] = useState("");
   const [currency, setCurrency] = useState("USD");
 
-  const { loan: currentLoan, loacPurpose: currentLoanPurpose,isLoading } = useSelector(
-    (store) => store.account
-  );
+  const {
+    loan: currentLoan,
+    loacPurpose: currentLoanPurpose,
+    isLoading,
+  } = useSelector((store) => store.account);
 
   const dispatch = useDispatch();
   function handleDeposit() {
@@ -58,7 +60,9 @@ function AccountOperations() {
             <option value="GBP">British Pound</option>
           </select>
 
-          <button onClick={handleDeposit} disabled={isLoading}>{ isLoading? 'Converting...' : `Deposit ${depositAmount}`}</button>
+          <button onClick={handleDeposit} disabled={isLoading}>
+            {isLoading ? "Converting..." : `Deposit ${depositAmount}`}
+          </button>
         </div>
 
         <div>
